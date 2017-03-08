@@ -38,7 +38,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-background-color='#e' data-background-image='img/Minimal_Wood_1_by_dimage.jpg'>
-					<h3 class='hanna'>Electron으로 개발 시작하기</h3>
+					<h3 class='hanna'><span style='color: #80DEEA;'>Electron</span>으로 개발 시작하기</h3>
 					<br>
 					<h4>Kesus Kim</h4>
 					<div>
@@ -57,7 +57,7 @@
 					<div style='background-color: #222; color: azure;'>
 						<div class='hanna'>Electron으로 개발하는 것</div>
 						=
-						<div class='hanna'><u>커스터마이징</u> 가능한 Chrome 브라우저를 플랫폼으로 사용하는 것</div>
+						<div class='hanna'><u>커스터마이징</u> 가능한 Chrome 브라우저를<br />개발 플랫폼으로 사용하는 것</div>
 					</div>
 				</section>
 				<section data-background-color='#366A7F'>
@@ -83,7 +83,7 @@
 				</section>
 				<section>
 					<section>
-						<h3 class='hanna'>Electron의 핵심 이해하기</h3>
+						<h3 class='hanna'>Electron의 <span style='color: #80DEEA;'>핵심</span> 이해하기</h3>
 						<i>main</i> process / <i>renderer</i> process
 						<div style='font-size: .6em;'>
 							<p>Multi-process Architecture</p>
@@ -93,25 +93,30 @@
 					<section>
 						<img style='border: none;' src='https://www.chromium.org/developers/design-documents/multi-process-architecture/arch.png'  />
 					</section>
-					<section>
+					<section class="hanna">
 						<ul>
-							<b>
+							<b style='color: #80DEEA;'>
 								main process
 							</b>
 								<ul>
-									<li>전체적으로 모든 것들을 관리하는 프로세스 (눈에 안 보임!)</li>
-									<li>시스템에 접근할 수 있는 프로세스</li>
+									<li>전체적으로 <u>모든 것들을 관리</u>하는 프로세스<br/>(눈에 안 보임!)</li>
+									<li><u>시스템에 접근</u>할 수 있는 프로세스</li>
 								</ul>
 							<hr />
-								<b>
+								<b style='color: #80DEEA;'>
 								renderer process
 								</b>
 								<ul>
 									<li>실제 화면에 보여지는 부분</li>
 									<li>Chrome 에서의 각각의 '탭'에 해당</li>
-									<li style='font-size:.7em; line-height: 3em;'>시스템에 접근할 <u style='color: blueviolet;'>수도</u> 있는 프로세스 (권장 X)</li>
+									<li style='font-size:.7em; line-height: 3em;'>시스템에 접근할 <u style='color: blueviolet;'>수도</u> 있는 프로세스 <span style='color: red; font-weight: 600;'>(권장 X)</span></li>
 								</ul>
 						</ul>
+					</section>
+					<section class="hanna">
+						<div>
+							결국, <span style='color: #80DEEA;'>웹 앱을 개발</span>하는 거에요.<br />( + Node.js를 통해서 시스템에 접근하구요!)
+						</div>
 					</section>
 				</section>
 				<section data-background-color='#366A7F'>
@@ -131,108 +136,74 @@
 					<section>
 						<div class="hanna">
 							[스샷]
-							짠! 간단하게 만들어졌어요.
-						</div>
-					</section>
-				</section>
-				<section data-background-color='#366A7F'>
-					<section>
-						<div class="hanna">
-							이제 간단한 Todo 앱을 만들어볼게요.
+							# Step 1
 						</div>
 					</section>
 					<section>
 						<div class="hanna">
-							[스샷 및 과정]
+							[스샷]
+							# Step 2
+						</div>
+					</section>
+					<section>
+						<div class="hanna">
+							[스샷]
+							# Step 3
+						</div>
+					</section>
+					<section>
+						<div class="hanna">
+							[스샷]
+							# Step 4
 						</div>
 					</section>
 				</section>
 				<section>
-					<div class="hanna">
-						Electron API에 대한 참조는 여기서 하면 되요!
+					<div>
+						<p class="hanna">Electron API에 대한 참조는 여기서 하면 되요!</p>
 
 						<a href="http://electron.atom.io/docs/">http://electron.atom.io/docs</a>
 						<a href="https://github.com/electron/electron-api-demos">https://github.com/electron/electron-api-demos</a>
 					</div>
 				</section>
 				<section>
-					<div class="hanna">
-						어플리케이션을 배포할 때에는 어떻게 할까요?
-					</div>
-				</section>
-				<section>
 					<div>
-						https://github.com/electron-userland/electron-builder
+						<p class="hanna">어플리케이션을 배포할 때에는 이 패키지를 사용하세요!</p>
+						<a href="https://github.com/electron-userland/electron-builder">https://github.com/electron-userland/electron-builder</a>
 					</div>
 				</section>
 				<section>
 					<section>
 						<div class="hanna">
-							다른 JavaScript Framework를 추가하고 싶으면 어떻게 할까요?
+							다른 JS Framework를 추가하고 싶으면 어떻게 할까요?
 						</div>
 					</section>
 					<section>
 						<div class="hanna">
-							아... 이게 엄청나게 복잡합니다.
-							요즘 프론트엔드에서는 진짜 많이 복잡해요.
-							Webpack이 너무 어려워 ㅠㅠ
+							아... 이게 엄청나게 복잡합니다.<br />
+							요즘 프론트엔드에서는 <span style='color: blueviolet;'>진짜 많이 복잡</span>해요.<br />
+							Bundling이 너무 어려워 ㅠㅠ
 						</div>
 					</section>
 				</section>
 				<section>
 					<div class="hanna">
-						<li>ES5 기반 : 그냥 추가하면 되요!</li>
-						<li>ES6/ES7 등 Transpile 기반 : 넘나 어려움...</li>
+						<ul style='list-style: square;'>
+							<li><span style='color: #80DEEA;'>ES5 기반:</span> 그냥 추가하면 되요!</li>
+							<li><span style='color: #80DEEA;'>ES6/ES7 등 Transpile 기반:</span> 진짜 넘나 어려운것...</li>
+						</ul>
 					</div>
 				</section>
 				<section>
 					<div class="hanna">
-						대표적으로 Angular 2 / React
-					</div>
-				</section>
-				<section>
-					<div class="hanna">
-						Angular2 : TypeScript 기반. <br>
-						컴파일 과정이 너무 복잡해요.
-					</div>
-				</section>
-				<section>
-					TypeScript -> (NG Compile)TypeScript -> (Transpile)ES6 -> (Treeshaking)ES6 -> (Transpile)ES5
-				</section>
-				<section>
-					<div class="hanna">
-						이 과정에서 브라우저는 (아직까진) ES6 모듈을 지원하지 않기 때문에,
-					import / export 구문들은 모두 ES5로 트랜스파일 되어야 해요!
-					</div>
-				</section>
-				<section>
-					<div class="hanna">
-						하지만 Electron 의 모듈에 대한 컨텍스트와,
-						Angular 의 모듈에 대한 컨텍스트가 서로 다르기 때문에
-						이를 맞춰주려면 많은 설정을 해야 해요.
-					</div>
-				</section>
-				<section>
-					<div class="hanna">
-						간단하게는 webpack 의 target: 'electron-render' (1.14 이상부터!)
-					복잡하게는 연관된 모든 설정들!!
-					</div>
-				</section>
-				<section>
-					<div class="hanna">
-						머리 아픕니다.
+						그래서 이미 똑똑한 여러 명의 사람들이 해 놓은걸 쓰면 되요!
 
-						React는 그나마 조금 쉽지만, 여전히 어렵기는 마찬가지!
-					</div>
-				</section>
-				<section>
-					<div class="hanna">
-						그러니까 이미 똑똑한 여러 명의 사람들이 해 놓은걸 쓰면 되요!
-
-						Angular 는 아직 없습니다. (ㅠㅠ) 그래도 곧 정식으로 나올 것 같아요!
-						React: https://github.com/chentsulin/electron-react-boilerplate
-						Vue: https://github.com/SimulatedGREG/electron-vue
-						Ember: https://github.com/felixrieseberg/ember-electron
+						<ul style='list-style: none; font-size: .7em; line-height: 2em; margin: 1em 0;'>
+							<li><img style='width: 1em; border: none; margin: 0;' src="./img/angular-icon.png" alt="Angular Icon">: 아직 제대로 된건 없습니다 (ㅠㅠ) 그래도 언젠간 공식으로 지원할 것 같아요!</li>
+							<li><img style='width: 1em; border: none; margin: 0;' src="./img/react-icon.svg" alt="Angular Icon">: <a href='https://github.com/chentsulin/electron-react-boilerplate'>https://github.com/chentsulin/electron-react-boilerplate</a></li>
+							<li><img style='width: 1em; border: none; margin: 0;' src="./img/vue-icon.png" alt="Angular Icon">: <a href='https://github.com/SimulatedGREG/electron-vue'>https://github.com/SimulatedGREG/electron-vue</a></li>
+							<li><img style='width: 1em; border: none; margin: 0;' src="./img/ember-icon.png" alt="Angular Icon">: <a href='https://github.com/felixrieseberg/ember-electron'>https://github.com/felixrieseberg/ember-electron</a></li>
+						</ul>
 					</div>
 				</section>
 				<section>
