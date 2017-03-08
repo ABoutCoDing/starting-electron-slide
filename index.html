@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Electron으로 개발 시작하기</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Font Awesome! -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.min.css">
+
+		<!-- Fonts -->
+		<style>
+			@import url(https://fonts.googleapis.com/earlyaccess/hanna.css);
+
+			.hanna {
+				font-family: 'Hanna', sans-serif !important;
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-color='#e' data-background-image='img/Minimal_Wood_1_by_dimage.jpg'>
+					<h3 class='hanna'>Electron으로 개발 시작하기</h3>
+					<br>
+					<h4>Kesus Kim</h4>
+					<div>
+						<a href='http://blog.kesuskim.com' target='_blank'><i class="fa fa-rss faa-vertical animated"></i></a>
+						<a href='http://github.com/kesuskim' target='_blank'><i class="fa fa-github faa-vertical animated"></i></a>
+					</div>
+				</section>
+				<section class='hanna'>
+					<h3 class='hanna'>저는요...</h3>
+					<br>
+					<p>Web Developer</p>
+					<p>Architect</p>
+					<p>Hacker-wannabe</p>
+				</section>
+				<section data-background-image='https://avatars3.githubusercontent.com/u/13409222?v=3&s=400'>
+					<div style='background-color: #222; color: azure;'>
+						<div class='hanna'>Electron으로 개발하는 것</div>
+						=
+						<div class='hanna'><u>커스터마이징</u> 가능한 Chrome 브라우저를 플랫폼으로 사용하는 것</div>
+					</div>
+				</section>
+				<section data-background-color='#366A7F'>
+					<section>
+						<h3 class='hanna'>어떤 점이 좋을까요?</h3>
+						<br>
+						<div class='hanna'>
+							<span style='font-size: 1.2em; color: bisque;'>HTML 5</span> + <span style='font-size: 1.2em; color: bisque;'>CSS 3</span> + <span style='font-size: 1.2em; color: bisque;'>Chrome</span> + <span  style='font-size: 1.2em; color: bisque;'>Node</span> !
+						</div>
+					</section>
+					<section>
+						<div class='hanna'>
+							<p>Web Database, localStorage, WebGL, WebSocket, Notification, Flexbox, Web Animation 등등</p>
+							<p>새로운, 멋진 웹 기술을 브라우저 걱정 없이 사용할 수 있습니다!</p>
+						</div>
+					</section>
+					<section>
+						<div class="hanna">
+							곧 있으면 WebAssembly도 지원될 거에요!<br>
+							(Chrome version 58 부터, 현재는 version 56)
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3 class='hanna'>Electron의 핵심 이해하기</h3>
+						<i>main</i> process / <i>renderer</i> process
+						<div style='font-size: .6em;'>
+							<p>Multi-process Architecture</p>
+							<a href="https://www.chromium.org/developers/design-documents/multi-process-architecture">https://www.chromium.org/developers/design-documents/multi-process-architecture</a>
+						</div>
+					</section>
+					<section>
+						<img style='border: none;' src='https://www.chromium.org/developers/design-documents/multi-process-architecture/arch.png'  />
+					</section>
+					<section>
+						<ul>
+							<b>
+								main process
+							</b>
+								<ul>
+									<li>전체적으로 모든 것들을 관리하는 프로세스 (눈에 안 보임!)</li>
+									<li>시스템에 접근할 수 있는 프로세스</li>
+								</ul>
+							<hr />
+								<b>
+								renderer process
+								</b>
+								<ul>
+									<li>실제 화면에 보여지는 부분</li>
+									<li>Chrome 에서의 각각의 '탭'에 해당</li>
+									<li style='font-size:.7em; line-height: 3em;'>시스템에 접근할 <u style='color: blueviolet;'>수도</u> 있는 프로세스 (권장 X)</li>
+								</ul>
+						</ul>
+					</section>
+				</section>
+				<section data-background-color='#366A7F'>
+					<section>
+						<div class='hanna'>
+							한번 시작해볼까요?
+						</div>
+					</section>
+					<section data-markdown>
+						```bash
+						$ git clone https://github.com/electron/electron-quick-start
+						$ cd electron-quick-start
+						$ npm install
+						$ npm start
+						```
+					</section>
+					<section>
+						<div class="hanna">
+							[스샷]
+							짠! 간단하게 만들어졌어요.
+						</div>
+					</section>
+				</section>
+				<section data-background-color='#366A7F'>
+					<section>
+						<div class="hanna">
+							이제 간단한 Todo 앱을 만들어볼게요.
+						</div>
+					</section>
+					<section>
+						<div class="hanna">
+							[스샷 및 과정]
+						</div>
+					</section>
+				</section>
+				<section>
+					<div class="hanna">
+						Electron API에 대한 참조는 여기서 하면 되요!
+
+						<a href="http://electron.atom.io/docs/">http://electron.atom.io/docs</a>
+						<a href="https://github.com/electron/electron-api-demos">https://github.com/electron/electron-api-demos</a>
+					</div>
+				</section>
+				<section>
+					<div class="hanna">
+						어플리케이션을 배포할 때에는 어떻게 할까요?
+					</div>
+				</section>
+				<section>
+					<div>
+						https://github.com/electron-userland/electron-builder
+					</div>
+				</section>
+				<section>
+					<section>
+						<div class="hanna">
+							다른 JavaScript Framework를 추가하고 싶으면 어떻게 할까요?
+						</div>
+					</section>
+					<section>
+						<div class="hanna">
+							아... 이게 엄청나게 복잡합니다.
+							요즘 프론트엔드에서는 진짜 많이 복잡해요.
+							Webpack이 너무 어려워 ㅠㅠ
+						</div>
+					</section>
+				</section>
+				<section>
+					<div class="hanna">
+						<li>ES5 기반 : 그냥 추가하면 되요!</li>
+						<li>ES6/ES7 등 Transpile 기반 : 넘나 어려움...</li>
+					</div>
+				</section>
+				<section>
+					<div class="hanna">
+						대표적으로 Angular 2 / React
+					</div>
+				</section>
+				<section>
+					<div class="hanna">
+						Angular2 : TypeScript 기반. <br>
+						컴파일 과정이 너무 복잡해요.
+					</div>
+				</section>
+				<section>
+					TypeScript -> (NG Compile)TypeScript -> (Transpile)ES6 -> (Treeshaking)ES6 -> (Transpile)ES5
+				</section>
+				<section>
+					<div class="hanna">
+						이 과정에서 브라우저는 (아직까진) ES6 모듈을 지원하지 않기 때문에,
+					import / export 구문들은 모두 ES5로 트랜스파일 되어야 해요!
+					</div>
+				</section>
+				<section>
+					<div class="hanna">
+						하지만 Electron 의 모듈에 대한 컨텍스트와,
+						Angular 의 모듈에 대한 컨텍스트가 서로 다르기 때문에
+						이를 맞춰주려면 많은 설정을 해야 해요.
+					</div>
+				</section>
+				<section>
+					<div class="hanna">
+						간단하게는 webpack 의 target: 'electron-render' (1.14 이상부터!)
+					복잡하게는 연관된 모든 설정들!!
+					</div>
+				</section>
+				<section>
+					<div class="hanna">
+						머리 아픕니다.
+
+						React는 그나마 조금 쉽지만, 여전히 어렵기는 마찬가지!
+					</div>
+				</section>
+				<section>
+					<div class="hanna">
+						그러니까 이미 똑똑한 여러 명의 사람들이 해 놓은걸 쓰면 되요!
+
+						Angular 는 아직 없습니다. (ㅠㅠ) 그래도 곧 정식으로 나올 것 같아요!
+						React: https://github.com/chentsulin/electron-react-boilerplate
+						Vue: https://github.com/SimulatedGREG/electron-vue
+						Ember: https://github.com/felixrieseberg/ember-electron
+					</div>
+				</section>
+				<section>
+					<div class="hanna">
+						Thank you!
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				transition: 'fade',
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
